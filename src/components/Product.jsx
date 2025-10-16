@@ -1,8 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import ProductCard from './ProductCard';
+import { useDispatch } from 'react-redux';
 const Product = () => {
+
     const [products, setProducts] = useState([]);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         //api
@@ -16,15 +19,20 @@ const Product = () => {
 
     }, [])
     return (
-        <div>
-            <h1>Products</h1>
-            {products.map((item) => (
-                <ProductCard data={item} />
-            ))}
-            {/* {JSON.stringify(products)} */}
+        <div className='container'>
+            <h1>Product Dashboard</h1>
+            <div className='products'>
+                {products.map((item) => (
+                    <ProductCard key={item.id} data={item} />
+                ))}
+
+
+            </div>
+
+
 
         </div>
     )
 }
 
-export default Product
+export default Product;
