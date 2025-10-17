@@ -2,10 +2,19 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import ProductCard from './ProductCard';
 import { useDispatch } from 'react-redux';
-const Product = () => {
+import { addItem } from '../store/cartSlice';
 
+
+const Product = () => {
     const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
+
+    const addToCart = (product) => {
+        dispatch(addItem(product));
+        console.log(product);
+
+
+    }
 
     useEffect(() => {
         //api
@@ -23,7 +32,7 @@ const Product = () => {
             <h1>Product Dashboard</h1>
             <div className='products'>
                 {products.map((item) => (
-                    <ProductCard key={item.id} data={item} />
+                    <ProductCard key={item.id} data={item} addToCart={addToCart} />
                 ))}
 
 

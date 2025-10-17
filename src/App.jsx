@@ -9,7 +9,7 @@ import Product from './components/Product'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import RootLayout from './components/RootLayout'
 import { Provider } from 'react-redux'
-import cartStore from './store/cartStore'
+import store from './store/store'
 
 function App() {
 
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className='app'>
-      <Provider store={cartStore}>
+      <Provider store={store}>
         <RouterProvider router={router} />
 
       </Provider>
