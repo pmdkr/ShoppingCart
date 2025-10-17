@@ -11,7 +11,7 @@ const Product = () => {
 
     const addToCart = (product) => {
         dispatch(addItem(product));
-        console.log(product);
+        // console.log(product);
 
 
     }
