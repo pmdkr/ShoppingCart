@@ -22,7 +22,7 @@ const Product = () => {
             .then(data => data.json())
             .then((result) => {
                 setProducts(result);
-                console.log(result);
+                // console.log(result);
             }
             )
 
