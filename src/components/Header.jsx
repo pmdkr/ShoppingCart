@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -9,17 +10,19 @@ const Header = () => {
         <div className='nav-items'>
             <div className='nav'>
                 <div>
-                    <img className='menu-icon'
-                        src='https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/What%20is%20a%20Hamburger%20Button.png?width=225&name=What%20is%20a%20Hamburger%20Button.png'
-                        alt='menu-btn'
-                        style={{ width: '40px', height: '40px' }} />
+                    <Link to="/">
+                        <img className='menu-icon'
+                            src='https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/What%20is%20a%20Hamburger%20Button.png?width=225&name=What%20is%20a%20Hamburger%20Button.png'
+                            alt='menu-btn'
+                            style={{ width: '40px', height: '40px' }} /></Link>
+
 
                 </div>
-                <div>
+                <div className='menu-list' style={{ marginLeft: '20px', textAlign: 'center' }}>
                     <ul>
-                        <li>Home</li>
-                        <li>Cart</li>
-                        <li>Contact</li>
+                        <Link to="/" style={{ marginLeft: '10px' }}>Home</Link>
+                        <Link to="/cart" style={{ marginLeft: '10px' }}>Cart</Link>
+                        <Link to="/contact" style={{ marginLeft: '10px' }}>Contact</Link>
 
                     </ul>
                 </div>
